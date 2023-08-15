@@ -5,7 +5,7 @@ import {RandomService} from "../random.service";
 @Component({
   selector: 'random-lazy',
   template: '<p>{{randomService.random}}</p>',
-  //providers: [RandomService] // 29
+  //providers: [RandomService] // 29, 31
 })
 export class RandomLazyComponent {
   constructor(public randomService: RandomService3) {}

@@ -9,6 +9,7 @@ import {AllRandomsComponent} from './all.randoms.component';
 import {TopComponent} from "./host/top.component";
 import {ParentComponent} from "./host/parent.component";
 import {ChildDirective} from "./host/child.directive";
+import { APP_CONFIG, CONFIG } from './app-config';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {ChildDirective} from "./host/child.directive";
     ]),
     ConfigModule
   ],
+  providers: [{provide: APP_CONFIG, useValue: CONFIG}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
