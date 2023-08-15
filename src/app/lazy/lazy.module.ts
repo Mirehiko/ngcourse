@@ -10,7 +10,9 @@ import { RandomService } from '../random.service';
     RandomLazyComponent,
     LazyAppComponent,
   ],
-  providers:[{provide: RandomService3, useClass: RandomService}],
+  // providers:[{provide: RandomService3, useClass: RandomService}],// 29
+  providers:[{provide: RandomService3, useExisting: RandomService}],// 31
+
   imports: [
       RouterModule.forChild([
       { path: '', component: LazyAppComponent }
