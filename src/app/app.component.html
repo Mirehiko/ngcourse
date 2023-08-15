@@ -6,6 +6,17 @@
   <account underline2 [balance]=150></account>
   <account underline3 [balance]=-150></account>
 
+  <div *inputCount="['email', 'number']; initial: ['number','email']; let num; let i = index; ">
+    {{i}}|{{num}}<input type="text">
+  </div>
+<!--  <div *inputCount="[228, 335]; let num; let i = index; init: [1,2]">-->
+<!--    {{i}}|{{num}}<input type="text">-->
+<!--  </div>-->
+<!--  <ng-template [inputCount]="3">-->
+<!--    <input type="text">-->
+<!--  </ng-template>-->
+<!--  <div [inputCount]="3"></div>-->
+  
   <ng-template [ngIf]="false">
     <account [balance]=999></account>
   </ng-template>

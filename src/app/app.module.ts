@@ -31,6 +31,7 @@ import {
 } from "./component-outlet-exercise";
 import { GenerateInputsViewcontainerDirective } from './generate-inputs-viewcontainer.directive';
 import {TemplateOutletComponentDynamic} from "./template-outlet-dynamic.component";
+import {GenerateCustomInputDirective} from "./directives";
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import {TemplateOutletComponentDynamic} from "./template-outlet-dynamic.componen
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    GenerateCustomInputDirective,
   ],
   providers: [],
   bootstrap: [AppComponent]
