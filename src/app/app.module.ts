@@ -9,7 +9,6 @@ import {AllRandomsComponent} from './all.randoms.component';
 import {TopComponent} from "./host/top.component";
 import {ParentComponent} from "./host/parent.component";
 import {ChildDirective} from "./host/child.directive";
-import { RandomTitleService } from './random-title.service';
 
 @NgModule({
   declarations: [
@@ -30,9 +29,6 @@ import { RandomTitleService } from './random-title.service';
       }
     ]),
     ConfigModule
-  ],
-  providers: [
-    {provide: RandomTitleService, useValue: {title: 'Horay!'}}
   ],
   bootstrap: [AppComponent]
 })

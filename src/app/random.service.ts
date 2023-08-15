@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {RandomTitleService} from "./random-title.service";
 
-@Injectable({providedIn: 'root'}) // 31
+@Injectable({providedIn: 'root'})
 export class RandomService {
   random: string;
 
