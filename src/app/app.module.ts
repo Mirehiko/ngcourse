@@ -10,6 +10,8 @@ import {TopComponent} from "./host/top.component";
 import {ParentComponent} from "./host/parent.component";
 import {ChildDirective} from "./host/child.directive";
 import { APP_CONFIG, CONFIG } from './app-config';
+import { RandomTitleComponent } from './random-title.component';
+import { RandomTitleService } from './random-title.service';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { APP_CONFIG, CONFIG } from './app-config';
     TopComponent,
     ParentComponent,
     ChildDirective,
+    RandomTitleComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,12 @@ import { APP_CONFIG, CONFIG } from './app-config';
     ]),
     ConfigModule
   ],
-  providers: [{provide: APP_CONFIG, useValue: CONFIG}],
+  providers: [
+    {provide: APP_CONFIG, useValue: CONFIG},
+    {provide: RandomTitleService, useFactory: () => {
+
+    }}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
