@@ -1,35 +1,77 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import {RandomComponent} from './random.component';
-import {RouterModule} from '@angular/router';
-import {ConfigModule} from './config/config.module';
-import {AllRandomsComponent} from './all.randoms.component';
-import {TopComponent} from "./host/top.component";
-import {ParentComponent} from "./host/parent.component";
-import {ChildDirective} from "./host/child.directive";
+import {AppComponent} from './app.component';
+import {AccountComponent} from './account.component';
+import {HighlightDirective} from './highlight.directive';
+import {FormsModule} from '@angular/forms';
+import {UnderlineDirective} from './underline.directive';
+import {Underline2Directive} from './underline2.directive';
+import { Underline3Directive } from './underline3.directive';
+import {RangeDirective} from './range.directive';
+import {AlertComponent} from './alert.component';
+import {DynamicComponent} from './dynamic.component';
+import {RenderDirective} from './render.directive';
+import {IsAdminDirective} from './admin.directive';
+import {CheckAdminComponent} from './checkadmin.component';
+import {DelayDirective} from './delay.directive';
+import {CardComponent} from './card.component';
+import {RenderComponent} from './render.component';
+import {PopoverComponent} from './popover.component';
+import {PopoverSimpleComponent} from './popover-simple.component';
+import {PopoverSimpleDirective} from './popover-simple.directive';
+import {TemplateOutletComponent} from './template-outlet.component';
+import {ByeComponent, ComponentOutletComponent, HelloComponent} from './component-outlet.component';
+import {ComponentOutlet2Component, GreetComponent} from './component-outlet2.component';
+import {ComponentOutlet3Component, ContentComponent} from './component-outlet3.component';
+import {
+  ComponentOutletExerciseComponent,
+  OnlyEmailInputComponent,
+  OnlyNumberInputComponent
+} from "./component-outlet-exercise";
+import { GenerateInputsViewcontainerDirective } from './generate-inputs-viewcontainer.directive';
+import {TemplateOutletComponentDynamic} from "./template-outlet-dynamic.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    RandomComponent,
-    AllRandomsComponent,
-    TopComponent,
-    ParentComponent,
-    ChildDirective,
+    AlertComponent,
+    DynamicComponent,
+    AccountComponent,
+    HighlightDirective,
+    UnderlineDirective,
+    Underline2Directive,
+    Underline3Directive,
+    RangeDirective,
+    RenderDirective,
+    IsAdminDirective,
+    DelayDirective,
+    CardComponent,
+    RenderComponent,
+    CheckAdminComponent,
+    PopoverComponent,
+    PopoverSimpleComponent,
+    PopoverSimpleDirective,
+    TemplateOutletComponent,
+    HelloComponent,
+    ByeComponent,
+    ComponentOutletComponent,
+    GreetComponent,
+    ComponentOutlet2Component,
+    ComponentOutlet3Component,
+    ContentComponent,
+    OnlyEmailInputComponent,
+    OnlyNumberInputComponent,
+    ComponentOutletExerciseComponent,
+    GenerateInputsViewcontainerDirective,
+    TemplateOutletComponentDynamic,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      {
-        path: 'lazy',
-        loadChildren: () => import('./lazy/lazy.module')
-          .then(m => m.LazyModule)
-      }
-    ]),
-    ConfigModule
+    FormsModule
   ],
+  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -1,16 +1,70 @@
-{{title}}
 
-<random></random>
-<random></random>
+<div style="padding-bottom: 500px">
+  <account [ngStyle]="{color: 'green'}" [balance]=100></account>
+  <account highlight [balance]=-200></account>
+  <account underline [balance]=100></account>
+  <account underline2 [balance]=150></account>
+  <account underline3 [balance]=-150></account>
 
-<a [routerLink]="['/lazy']">Lazy module</a>
-<br>
-<router-outlet></router-outlet>
+  <ng-template [ngIf]="false">
+    <account [balance]=999></account>
+  </ng-template>
+  <account *ngIf="false" [balance]=999></account>
 
-<br>
-Config module title: <app-title></app-title>
+  <ng-template ngFor let-balance [ngForOf]="[200,300]">
+    <account [balance]="balance"></account>
+  </ng-template>
+  <account *ngFor="let balance of [200,300]" [balance]="balance"></account>
 
-<h2>All randoms:</h2>
-<randoms></randoms>
+  <h2>Render me:</h2>
+  <div appRender button="hello"></div>
 
-<app-top></app-top>
+  <h2>Is admin:</h2>
+  <div *isAdmin="true" >You are admin!</div>
+
+  <h2>Delay directive:</h2>
+    <span *ngFor="let item of [1,2,3]">
+      <card *delay="2000 * item">{{item}}</card>
+    </span>
+
+  <h2>Check admin:</h2>
+  <checkadmin [admin]="false"></checkadmin>
+
+  <h2>Range directive:</h2>
+
+  <div *appRange="maxElements; let num; let i = index">
+    index: {{i}} | element: {{num + 1}} of {{maxElements}}
+  </div>
+
+  <label>
+    Year:
+    <select>
+      <option *appRange="[2015, 2025]; let num; initial:[1,2,3]"
+              [value]="num" >{{num}}</option>
+    </select>
+  </label>
+
+  <h2>Dynamic component:</h2>
+   <app-dynamic></app-dynamic>
+
+  <h2>Popover directive:</h2>
+
+  <button popover-simple text="Popover text">
+    Show popover
+  </button>
+
+  <h2>Template outlet component:</h2>
+    <template-component></template-component>
+
+  <h2>Template outlet component dynamic:</h2>
+    <template-component-dynamic></template-component-dynamic>
+
+  <h2>Component outlet:</h2>
+    <component-outlet type="bye"></component-outlet>
+
+  <h2>Component outlet 2:</h2>
+    <component-outlet2 name="John"></component-outlet2>
+
+  <h2>Component outlet 3:</h2>
+    <component-outlet3 name="Giovanni"></component-outlet3>
+</div>

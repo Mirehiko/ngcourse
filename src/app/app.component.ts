@@ -1,9 +1,14 @@
 import {Component} from '@angular/core';
+import {defer, Observable, of} from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'DI';
+  readonly maxElements = 3;
+  readonly data$: Observable<boolean> = of(false);
+  readonly random1or0$: Observable<number> =
+    defer(() => of((Math.random() > 0.5) ? 1 : 0));
+
 }
