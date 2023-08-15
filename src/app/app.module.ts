@@ -29,9 +29,10 @@ import { APP_CONFIG, CONFIG } from './app-config';
           .then(m => m.LazyModule)
       }
     ]),
-    ConfigModule
+    ConfigModule.forRoot({title: 'lol kek', apiEndpoint: ''}),
+    // ConfigModule,
   ],
-  providers: [{provide: APP_CONFIG, useValue: CONFIG}],
+  // providers: [{provide: APP_CONFIG, useValue: CONFIG}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

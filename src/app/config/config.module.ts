@@ -13,7 +13,10 @@ import {APP_CONFIG, AppConfig} from "../app-config";
   ]
 })
 export class ConfigModule {
-
-
-
+  static forRoot(config: AppConfig): ModuleWithProviders<any> {
+    return {
+      ngModule: ConfigModule,
+      providers: [{provide: APP_CONFIG, useValue: config}]
+    };
+  }
 }

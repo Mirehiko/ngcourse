@@ -1,4 +1,4 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, inject} from '@angular/core';
 import {APP_CONFIG, AppConfig} from "../../app-config";
 
 @Component({
@@ -6,6 +6,11 @@ import {APP_CONFIG, AppConfig} from "../../app-config";
   template: '{{title}}',
 })
 export class TitleComponent  {
-  title = 'no title';
+  protected title: string = 'no title';
+  private _config: AppConfig = inject(APP_CONFIG);
+
+  constructor () {
+    this.title = this._config.title;
+  }
 
 }
