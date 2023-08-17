@@ -20,7 +20,19 @@ export class ReactiveFormComplexExampleComponent {
     return this.userForm.get('friends') as FormArray<FormControl>;
   }
 
+  get stack() {
+    return this.userForm.get('friends') as FormArray<FormControl>;
+  }
+
   addFriend() {
-    this.friends.push(this.fb.control(''));
+    this.friends.push(this.fb.control(''), );
+  }
+
+  removeFriend(index: number) {
+    this.friends.removeAt(index);
+  }
+
+  addStack() {
+    this.stack.push(this.fb.control(''), );
   }
 }

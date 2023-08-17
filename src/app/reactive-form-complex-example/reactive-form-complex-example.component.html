@@ -5,10 +5,11 @@
       <input type="text" formControlName="name">
     </label>
   </div>
-  <div *ngFor="let friend of friends.controls" class="form-row">
+  <div *ngFor="let friend of friends.controls; let index" class="form-row">
     <label>
       Friend:
       <input type="text" [formControl]="friend">
+      <button (click)="removeFriend(index)">remove</button>
     </label>
   </div>
   <div class="form-row">
