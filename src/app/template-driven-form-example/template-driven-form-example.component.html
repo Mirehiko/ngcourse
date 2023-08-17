@@ -1,5 +1,17 @@
 <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
   <div style="display: grid; grid-template-columns: 130px auto 65%">
+    <div><label for="nameId">Uppercase:&nbsp;</label></div>
+    <div>
+      <input type="text"
+             id="uppercase"
+             name="uppercase"
+             [(ngModel)]="user.name"
+             #uppercaseInput="ngModel"
+             [uppercase] = "'a'">
+      <div>
+        <span *ngIf="uppercaseInput.invalid">Uppercase input contains errors: {{uppercaseInput.errors|json}}</span>
+      </div>
+    </div>
     <div><label for="nameId">Name:&nbsp;</label></div>
     <div>
       <input type="text"
