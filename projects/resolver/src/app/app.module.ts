@@ -9,13 +9,14 @@ import {DataResolver} from "./data.resolver";
 import {DataService} from "./data.service";
 import {HttpClientModule} from "@angular/common/http";
 import {routing} from "./app.routing";
-import {UserDataResolver} from "./module/user-data.resolver";
-import {UserService} from "./module/user.service";
+import { AuthService, UserDataResolver, UserService } from './module';
 
 @NgModule({
   imports:      [ BrowserModule, HttpClientModule, routing],
   declarations: [ AppComponent, HomeResComponent, DataComponent],
-  providers:[DataService, DataResolver, UserDataResolver, UserService,
+  providers:[
+    DataService, DataResolver,
+    UserDataResolver, UserService, AuthService,
     {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap:    [ AppComponent ]
 })

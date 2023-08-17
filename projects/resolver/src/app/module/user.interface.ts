@@ -5,4 +5,5 @@ export interface UserInterface {
   email: string;
   gender: string;
   ip_address: string;
+  role?: string;
 }

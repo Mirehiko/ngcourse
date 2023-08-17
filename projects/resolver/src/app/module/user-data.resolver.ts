@@ -7,7 +7,7 @@ import {UserInterface} from "./user.interface";
 @Injectable()
 export class UserDataResolver implements Resolve<UserInterface[]> {
 
-  constructor( private userService: UserService) {}
+  constructor( private userService: UserService ) {}
 
   resolve(): Observable<UserInterface[]> {
     return this.userService.getUsers();

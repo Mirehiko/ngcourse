@@ -2,7 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {DataResolver} from "./data.resolver";
 import {DataComponent} from "./data.component";
 import {HomeResComponent} from "./home.component";
-import {UserDataResolver} from "./module/user-data.resolver";
+import { UserDataResolver } from './module';
 
 const routes: Routes = [
   {path: '',        component: HomeResComponent},
