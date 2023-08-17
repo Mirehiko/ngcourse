@@ -14,7 +14,8 @@ export class TemplateDrivenFormExampleComponent implements AfterViewInit {
     name: '',
     userName: '',
     password: '',
-    password2: ''
+    password2: '',
+    uppercase: ''
   };
 
   @ViewChild('nameInput', {static: false})

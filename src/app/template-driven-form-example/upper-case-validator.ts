@@ -9,10 +9,11 @@ import {Directive, Input} from '@angular/core';
   }]
 })
 export class UpperCaseValidator implements Validator {
-  @Input('uppercase') expr?: string;
-
   validate(control: AbstractControl) {
-    if (control.value && !control.value.uppercase(this.expr)) {
+    if (!control.value) {
+      return null
+    }
+    if (control.value !== control.value.toUpperCase()) {
       return {uppercase: control.value};
     }
     return null;

@@ -12,6 +12,7 @@ import {CustomValidatorDirective} from './template-driven-form-example/custom-va
 import {CommonModule} from "@angular/common";
 import {EqualToValidatorDirective} from "./template-driven-form-example/equal-to-validator.directive";
 import {UserUniqueValidatorDirective} from "./template-driven-form-example/user-unique-validator.directive";
+import {UpperCaseValidator} from "./template-driven-form-example/upper-case-validator";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {UserUniqueValidatorDirective} from "./template-driven-form-example/user-
     CustomValidatorDirective,
     EqualToValidatorDirective,
     UserUniqueValidatorDirective,
+    UpperCaseValidator,
   ],
   imports: [
     BrowserModule,
