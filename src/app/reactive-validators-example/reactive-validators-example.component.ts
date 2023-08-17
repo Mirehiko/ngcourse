@@ -3,6 +3,7 @@ import {FormControl, Validators} from '@angular/forms';
 import {NotMargaretValidator} from '../validators/not-margaret-validator';
 import {forbiddenNameValidator} from '../validators/forbidden-name-validator';
 import {asyncLengthValidator} from '../validators/async-length-validator.service';
+import {domainValidator} from "../validators/domain-validator";
 
 @Component({
   selector: 'app-reactive-validators-example',
@@ -11,10 +12,14 @@ import {asyncLengthValidator} from '../validators/async-length-validator.service
 })
 export class ReactiveValidatorsExampleComponent {
 
-  name = new FormControl(null, [
-    Validators.minLength(3),
-    Validators.maxLength(5),
+  name = new FormControl('', [
+    domainValidator(['.com', '.ch'])
   ]);
+
+  // name = new FormControl(null, [
+  //   Validators.minLength(3),
+  //   Validators.maxLength(5),
+  // ]);
 
   anotherName = new FormControl('', [
     NotMargaretValidator
