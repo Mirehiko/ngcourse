@@ -21,11 +21,16 @@ export class ReactiveFormComplexExampleComponent {
   }
 
   get stack() {
-    return this.userForm.get('friends') as FormArray<FormControl>;
+    return this.userForm.get('stack') as FormArray<FormControl>;
   }
 
   addFriend() {
-    this.friends.push(this.fb.control(''), );
+    this.friends.push(
+      this.fb.group({
+        name: this.fb.control(''),
+        skill: this.fb.array([])
+      })
+    );
   }
 
   removeFriend(index: number) {
