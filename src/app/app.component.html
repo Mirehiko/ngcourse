@@ -1,23 +1,74 @@
+<h2>RxJS demos</h2>
+<ul>
+    <li>{{(post$ | async)?.length}}</li>
+    <li *ngFor="let post of post$ | async">{{post.title}}</li>
+</ul>
+<div #functionText></div>
+<div>
+    <h3>ShareReplay Example</h3>
+    <button (click)="subscribeToStream()">Subscribe</button>
+</div>
+<h3>Creation operators</h3>
+<button (click)="createObservable()">createObservable</button>
+<button (click)="createObservableAsync()">createObservableAsync</button>
+<button (click)="interval()">interval</button>
+<button (click)="range()">range</button>
+<button (click)="throw()">throw</button>
+<button (click)="timer()">timer</button>
+<button (click)="from()">from</button>
+<button (click)="fromEvent()">fromEvent</button>
+<button (click)="defer()">defer</button>
+<br>
+<button (click)="deferClick(b)">defer click</button><button #b>get time</button>
 
-<div>
-  <h2>Template form example</h2>
-  <app-template-driven-form-example></app-template-driven-form-example>
-</div>
-<div>
-  <h2>Reactive component example</h2>
-  <app-reactive-control-example></app-reactive-control-example>
-</div>
-<div>
-  <h2>Reactive validators example</h2>
-  <app-reactive-validators-example></app-reactive-validators-example>
-</div>
-<div>
-  <h2>Reactive form example</h2>
-  <app-reactive-form-example></app-reactive-form-example>
-</div>
-<div>
-  <h2>Reactive dynamic form example</h2>
-  <app-reactive-form-complex-example></app-reactive-form-complex-example>
-</div>
+<h3>Error handling operators</h3>
+<button (click)="catchError()">catchError</button>
+<button (click)="retry()">retry</button>
 
+<h3>Multicasting operators</h3>
+<button (click)="connect()">connect</button>
+<button (click)="share()">share</button>
 
+<h3>Filtering operators</h3>
+<button (click)="distinctUntilChanged()">distinctUntilChanged</button>
+<button (click)="debounce()">debounce</button>
+<br>
+<button (click)="debounceTime(searchBox)">debounce time</button>
+<input placeholder="debounce search" #searchBox>
+<button (click)="throttle(searchBox2)">throttle time</button>
+<input placeholder="throttle search" #searchBox2>
+<br>
+<button (click)="sampleTime(searchBox3)">sample time</button>
+<input placeholder="sampler search" #searchBox3>
+
+<h3>Combination operators</h3>
+<button (click)="zip()">zip</button>
+<button (click)="combineLatest()">combineLatest</button>
+<button (click)="merge()">merge</button>
+<button (click)="concat()">concat</button>
+<button (click)="withLatestFrom()">withLatestFrom</button>
+<br>
+<button (click)="forkJoin()">forkJoin</button>
+<button (click)="race()">race</button>
+<button (click)="concatJSON()">concat JSON</button>
+
+<h3>Transformation operators</h3>
+<button (click)="switchMapCounter(start)">switchMap counter</button>
+<button #start>start</button>
+{{switchMapCount}}
+<br>
+<button (click)="switchMap(play, pause)">switchMap countdown</button>
+<button #play>play️</button>
+<button #pause>pause</button>
+{{countdown}}
+<br>
+<button (click)="windowButton(nextWindow)">window</button>
+<button #nextWindow>next window</button>
+<br>
+<button (click)="windowMouseMoves()">window for MouseMove events</button>
+<br>
+<button (click)="bufferTime()">bufferTime</button>
+
+<h3>Pausable observables</h3>
+<button (click)="pausable()">pausable</button>
+<button (click)="pausableWithBuffer()">pausable with buffering</button>
