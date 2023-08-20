@@ -1,11 +1,11 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, inject, OnInit, ViewChild} from '@angular/core';
 import {
     BehaviorSubject,
     combineLatest,
     concat,
     connectable,
     defer,
-    EMPTY, finalize,
+    EMPTY,
     forkJoin,
     from,
     fromEvent,
@@ -51,7 +51,7 @@ import {
 } from 'rxjs/operators';
 import {ajax} from 'rxjs/ajax';
 import {HttpClient} from "@angular/common/http";
-import {FormControl} from "@angular/forms";
+import {Action, CustomService, State} from "./custom.service";
 
 @Component({
     selector: 'app-root',
@@ -69,6 +69,36 @@ export class AppComponent implements OnInit {
     private source$: Observable<number>;
     @ViewChild('functionText')
     functionText?: ElementRef<HTMLDivElement>;
+
+    private customService = inject(CustomService);
+
+    get state(): State {
+        return this.customService.currentState;
+    }
+
+    get action(): Action {
+        return this.customService.action;
+    }
+
+    protected changeState(): void {
+        switch (this.state) {
+            case State.Stopped: {
+                this.customService.start();
+                break;
+            }
+            case State.Paused: {
+                this.customService.resume();
+                break;
+            }
+            default: {
+                this.customService.pause();
+            }
+        }
+    }
+
+    protected stop(): void {
+        this.customService.stop();
+    }
 
     constructor(private http: HttpClient) {
     }

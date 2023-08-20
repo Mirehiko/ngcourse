@@ -1,4 +1,11 @@
 <h2>RxJS demos</h2>
+
+<hr>
+    <h3>Homework - {{state}}</h3>
+    <button (click)="changeState()">{{action}}</button>
+    <button (click)="stop()">stop</button>
+<hr>
+
 <ul>
     <li>{{(post$ | async)?.length}}</li>
     <li *ngFor="let post of post$ | async">{{post.title}}</li>
