@@ -1,26 +1,41 @@
 import {NgModule} from "@angular/core";
-import {UserComponent} from "./user.component";
 import {RouterModule} from "@angular/router";
 import {CommonModule} from "@angular/common";
-import { UserDetailsComponent } from "./user-details.component";
+import { FormsModule } from '@angular/forms';
+import { UserComponent } from "./user.component";
+import { AuthComponent, UserDetailsComponent } from './components';
+import { AdminGuard } from "./admin.guard";
+
 
 @NgModule({
   declarations: [
     UserComponent,
+    UserDetailsComponent,
+    AuthComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild([
       {
         path: '', component: UserComponent,
         children: [
+          
+          { path: 'auth', component: AuthComponent, outlet: "auth" },
+          {
+            path: 'admin', canActivate: [AdminGuard],
+            loadComponent: () => import('./components/edit/edit.component').then((m) => m.EditComponent)
+          },
           {
             path: ':id', component: UserDetailsComponent
           },
         ],
       },
-      { path: 'details', component: UserDetailsComponent, outlet: "details" }
+      
     ])
+  ],
+  providers: [
+    AdminGuard,
   ]
 })
 export class UserModule {}
