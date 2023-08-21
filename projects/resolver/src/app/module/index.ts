@@ -1,4 +1,4 @@
-export * from './auth.service';
+export * from './services/auth.service';
 export * from './user.module';
-export * from './user.service';
-export * from './user-data.resolver';
+export * from './services/user.service';
+export * from './resolvers/user-data.resolver';

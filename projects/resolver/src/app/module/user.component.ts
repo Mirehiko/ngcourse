@@ -1,6 +1,6 @@
 import {Component, inject} from "@angular/core";
-import { UserService } from "./user.service";
-import { AuthService } from 'projects/resolver/src/app/module/auth.service';
+import { UserService } from "./services/user.service";
+import { AuthService } from 'projects/resolver/src/app/module/services/auth.service';
 
 @Component({
   selector: 'users',

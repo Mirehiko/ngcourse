@@ -1,9 +1,9 @@
 import { Component, inject, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AuthService } from '../../auth.service';
-import { UserInterface } from '../../user.interface';
-import { UserService } from '../../user.service';
+import { AuthService } from '../../services/auth.service';
+import { UserInterface } from '../../interfaces/user.interface';
+import { UserService } from '../../services/user.service';
 
 
 @Component({

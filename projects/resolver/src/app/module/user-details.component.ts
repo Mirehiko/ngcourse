@@ -1,8 +1,8 @@
 import { Component, inject, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { UserService } from './user.service';
-import { UserInterface } from './user.interface';
+import { UserService } from './services/user.service';
+import { UserInterface } from './interfaces/user.interface';
 
 
 @Component({

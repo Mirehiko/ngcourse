@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
-import { UserInterface } from './user.interface';
-import { UserService } from 'projects/resolver/src/app/module/user.service';
+import { UserInterface } from '../interfaces/user.interface';
+import { UserService } from 'projects/resolver/src/app/module/services/user.service';
 
 
 @Injectable()
