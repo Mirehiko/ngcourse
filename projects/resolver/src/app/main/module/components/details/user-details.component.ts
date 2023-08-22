@@ -9,7 +9,7 @@ import { UserService } from 'projects/resolver/src/app/main/module/services/user
 @Component({
   selector: 'user-details',
   template: `
-      <div><b>Name:</b> {{user?.first_name}} {{user?.last_name}}</div>
+      <div><b>Name:</b> {{user?.firstName}} {{user?.lastName}}</div>
       <div><b>Email:</b> {{user?.email}}</div>
       <ng-container *ngIf="isAuth">
         <div><b>Gender:</b> {{user?.gender}}</div>

@@ -1,6 +1,6 @@
 import {inject, Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import { from, Observable } from 'rxjs';
+import { from, Observable, of } from 'rxjs';
 import {UserInterface} from "projects/resolver/src/app/main/module/interfaces/user.interface";
 import { tap } from 'rxjs/operators';
 import { SERVER_URL } from 'projects/resolver/src/app/server-url.const';
@@ -12,6 +12,9 @@ export class UserService {
   private serverUrl = inject(SERVER_URL)
 
   getUsers(): Observable<UserInterface[]> {
+    if (this.users.length) {
+      return of(this.users);
+    }
     return this.http.get<UserInterface[]>(`${this.serverUrl}/users`).pipe(tap(d => {
       this.users = d;
     }));

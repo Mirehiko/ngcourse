@@ -13,8 +13,8 @@ import { AuthService } from 'projects/resolver/src/app/auth/auth.service';
 <!--      </div>-->
       <div class="d-flex">
           <div>
-              <div *ngFor="let user of users">
-                  <a routerLink="{{user.id}}" routerLinkActive="active">{{user.first_name}} {{user.last_name}}</a>
+              <div *ngFor="let user of users | async">
+                  <a routerLink="{{user.id}}" routerLinkActive="active">{{user.firstName}} {{user.lastName}}</a>
               </div>
           </div>
           <div>
@@ -29,7 +29,6 @@ export class UserComponent {
   private authService = inject(AuthService);
 
   get users() {
-    
-    return this.userService.users;
+    return this.userService.getUsers();
   }
 }
