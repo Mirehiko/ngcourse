@@ -1,23 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from "@angular/common/http";
 
 import { AppComponent } from './app.component';
-import {HashLocationStrategy, LocationStrategy} from "@angular/common";
-import {HomeResComponent} from "./home.component";
 import {DataComponent} from "./data.component";
 import {DataResolver} from "./data.resolver";
 import {DataService} from "./data.service";
-import {HttpClientModule} from "@angular/common/http";
 import {routing} from "./app.routing";
-import { AuthService, UserDataResolver, UserService } from './module';
+import { AuthService } from './main/module';
+import { SERVER_URL } from './server-url.const';
+import { AuthModule } from './auth';
 
 @NgModule({
-  imports:      [ BrowserModule, HttpClientModule, routing],
-  declarations: [ AppComponent, HomeResComponent, DataComponent],
+  declarations: [ AppComponent, DataComponent],
+  imports:      [ BrowserModule, HttpClientModule, routing, AuthModule],
   providers:[
-    DataService, DataResolver,
-    UserDataResolver, UserService, AuthService,
-    {provide: LocationStrategy, useClass: HashLocationStrategy}],
-  bootstrap:    [ AppComponent ]
+    { provide: SERVER_URL, useValue: 'http://localhost:4000' },
+    DataService, DataResolver, AuthService,
+    // { provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

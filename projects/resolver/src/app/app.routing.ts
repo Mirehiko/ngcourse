@@ -1,23 +1,29 @@
 import { Routes, RouterModule } from '@angular/router';
-import {DataResolver} from "./data.resolver";
-import {DataComponent} from "./data.component";
-import {HomeResComponent} from "./home.component";
-import { UserDataResolver } from './module';
+import { AuthGuard } from './auth';
 
 const routes: Routes = [
-  {path: '',        component: HomeResComponent},
-  {path: 'mydata', component: DataComponent,
-    resolve: {
-      mydata: DataResolver
-    }
+  {
+    path: 'auth',
+    loadChildren: ()=>import('./auth/auth.module')
+      .then(m=>m.AuthModule),
   },
   {
-    path: 'users',
-    loadChildren: ()=>import('./module/user.module')
-      .then(m=>m.UserModule),
-    resolve: {
-      users: UserDataResolver
-    }
+    path: 'main',
+    loadChildren: ()=>import('./main/main.module')
+      .then(m=>m.MainModule),
+    canActivate: [AuthGuard],
+  },
+  // {
+  //   path: 'users',
+  //   loadChildren: ()=>import('./module/user.module')
+  //     .then(m=>m.UserModule),
+  //   canActivate: [AuthGuard],
+  //   resolve: {
+  //     users: UserDataResolver
+  //   }
+  // },
+  {
+    path: '**', redirectTo: 'main', pathMatch: 'full'
   }
 ];
 

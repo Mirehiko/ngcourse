@@ -36,18 +36,18 @@ app.use((err, req, res, next) => {
 const users = [
     {
         id: 1,
-        username: 'test',
-        password: 'test',
+        username: 'mirehiko@test.test',
+        password: '123',
         firstName: 'Test',
         lastName: 'User',
         authorities: ['CAN_TEST']
     },
     {
         id: 2,
-        username: 'user',
-        password: 'user',
-        firstName: 'User',
-        lastName: 'Userskiy',
+        username: 'mirehiko@admin.test',
+        password: '123',
+        firstName: 'Admin',
+        lastName: 'Adminsky',
         authorities: ['CAN_LIST_USERS','CAN_USE']
     }
 ];
