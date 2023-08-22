@@ -1,0 +1,14 @@
+<form (ngSubmit)="onSubmit()">
+  <label for="idId">ID: </label>
+  <input id="idId" [(ngModel)]="user.id" name="id" required>
+  <br>
+  <label for="nameId">Name: </label>
+  <input id="nameId" [(ngModel)]="user.name" #name="ngModel" name="name" required>
+  <span id="nameValidation" *ngIf="name.errors && name.errors['required']">Name must be defined</span>
+  <br>
+  <label for="cardNumberId">Card Number: </label>
+  <input id="cardNumberId" [(ngModel)]="user.cardNumber" name="cardNumber" required>
+  <br>
+
+  <input type="submit">
+</form>

@@ -1,0 +1,14 @@
+<h1>Welcome to testing!!!</h1>
+
+<app-hello name="{{ name }}"></app-hello>
+<app-user-details-form></app-user-details-form>
+<app-user-details-form-reactive></app-user-details-form-reactive>
+Loaded from JSON:
+
+<ul>
+  <li *ngFor="let user of users"> {{user.name}}-{{user.id}}
+    <button (click)="details(user.id)">Details</button>
+  </li>
+</ul>
+
+<app-user-details-server [userId]="selectedUserId"></app-user-details-server>

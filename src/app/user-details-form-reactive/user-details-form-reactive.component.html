@@ -1,0 +1,15 @@
+<form [formGroup]="userForm">
+  <label for="idId">ID: </label>
+  <input id="idId" name="id" required>
+  <br>
+  <label for="nameId">Name: </label>
+  <input id="nameId" name="name" formControlName="name" value="1">
+  <span id="nameValidation"
+        *ngIf="userForm.get('name')?.errors">Name must be defined</span>
+  <br>
+  <label for="cardNumberId">Card Number: </label>
+  <input id="cardNumberId" name="cardNumber" required>
+  <br>
+
+  <input type="submit">
+</form>
