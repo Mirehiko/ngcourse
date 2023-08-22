@@ -47,7 +47,7 @@ export class EditComponent {
       first_name: this.fname,
       last_name: this.lname,
       email: this.email,
-      id: Math.max(...this.userService.users.map(u => u.id)) + 1,
+      id: Math.max(...this.userService.users.map(u => u.id!)) + 1,
       gender: 'unknown',
       ip_address: '112.123.124.14',
     }

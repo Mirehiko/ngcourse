@@ -19,10 +19,10 @@ import { AdminGuard } from "projects/resolver/src/app/main/module/guards/admin.g
       {
         path: '', component: UserComponent,
         children: [
-          {
-            path: 'admin', canActivate: [AdminGuard],
-            loadComponent: () => import('projects/resolver/src/app/main/module/components/edit/edit.component').then((m) => m.EditComponent)
-          },
+          // {
+          //   path: 'admin', canActivate: [AdminGuard],
+          //   loadComponent: () => import('projects/resolver/src/app/main/module/components/edit/edit.component').then((m) => m.EditComponent)
+          // },
           {
             path: ':id', component: UserDetailsComponent
           },

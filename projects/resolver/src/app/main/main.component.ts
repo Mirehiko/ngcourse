@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AuthService } from './module';
+import { take } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -7,10 +10,18 @@ import { Component } from '@angular/core';
       <a [routerLink]="['/main']">Home</a> |
       <a [routerLink]="['mydata']">Data</a> |
       <a [routerLink]="['users']">Users</a> |
-      <a [routerLink]="['/auth']">Login</a> |
+      <a (click)="logout()">Logout</a> |
       <div>
         <router-outlet></router-outlet>
       </div>
   `,
 })
-export class MainComponent {}
+export class MainComponent {
+  private authService = inject(AuthService);
+  private router = inject(Router)
+  protected logout(): void {
+    this.authService.logout().pipe(take(1)).subscribe(() => {
+      this.router.navigate(['/'])
+    });
+  }
+}

@@ -1,9 +1,13 @@
 export interface UserInterface {
-  id: number;
+  id?: number;
   first_name: string;
   last_name: string;
   email: string;
   gender: string;
   ip_address: string;
   role?: string;
+  username?: string;
+  password?: string;
+  token?: string;
+  authorities?: string[];
 }
