@@ -22,7 +22,12 @@ import { UserDataResolver, UserService } from './module';
         path: '',
         component: MainComponent,
         children: [
-          {path: 'mydata', component: DataComponent,
+          {
+            path: '',
+            component: HomeResComponent,
+          },
+          {
+            path: 'mydata', component: DataComponent,
             resolve: {
               mydata: DataResolver
             }

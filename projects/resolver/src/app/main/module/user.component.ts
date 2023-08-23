@@ -5,12 +5,6 @@ import { AuthService } from 'projects/resolver/src/app/auth/auth.service';
 @Component({
   selector: 'users',
   template: `
-<!--      <div>-->
-<!--          <button [routerLink]="['/users', {outlets: {auth: 'auth'}}]">Authorize</button>-->
-<!--          <button *ngIf="isAuthorized" (click)="logout()">Logout</button>-->
-<!--          <button *ngIf="isAuthorized" routerLink="admin">Create user</button>-->
-<!--          <router-outlet name="auth"></router-outlet>-->
-<!--      </div>-->
       <div class="d-flex">
           <div>
               <div *ngFor="let user of users | async">

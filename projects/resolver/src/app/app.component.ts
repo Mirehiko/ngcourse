@@ -5,16 +5,7 @@ import {
 
 @Component({
   selector: 'app-root',
-  template: `
-<!--      <a [routerLink]="['/']">Home</a> |-->
-<!--      <a [routerLink]="['/auth']">Login</a> |-->
-<!--&lt;!&ndash;        <a [routerLink]="['mydata']">Data</a> |&ndash;&gt;-->
-<!--        <a [routerLink]="['users']">Users</a> |-->
-        <router-outlet></router-outlet>
-<!--        <div *ngIf="navigating">-->
-<!--            Loading...-->
-<!--        </div>-->
-    `
+  template: `<router-outlet></router-outlet>`
 })
 export class AppComponent {
 

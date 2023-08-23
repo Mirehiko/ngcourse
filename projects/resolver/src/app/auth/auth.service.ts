@@ -1,10 +1,9 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { UserInterface } from '../main/module/interfaces';
 import { SERVER_URL } from '../server-url.const';
-import { User } from 'frontend/src/app/models';
 
 
 @Injectable()
