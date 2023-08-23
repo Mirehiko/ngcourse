@@ -1,8 +1,10 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {Component, inject, OnDestroy, OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription, take } from 'rxjs';
 import { AuthService } from '../auth.service';
+import {Store} from "@ngrx/store";
+import {AuthGroup} from "../store";
 
 
 @Component({
@@ -16,6 +18,8 @@ export class LoginPageComponent implements OnInit, OnDestroy {
   form: FormGroup;
   // @ts-ignore
   aSub: Subscription;
+
+  private store = inject(Store);
 
   constructor(
     private authService: AuthService,
@@ -42,10 +46,12 @@ export class LoginPageComponent implements OnInit, OnDestroy {
     this.form.disable();
     if ( !this.form.invalid ) {
       const user = this.form.value;
-      this.authService.login(user.email, user.password).pipe(take(1)).subscribe(() => {
-        this.form.enable();
-        this.router.navigate(['/main']);
-      });
+
+      this.store.dispatch(AuthGroup.login(user));
+      // this.authService.login(user.email, user.password).pipe(take(1)).subscribe(() => {
+      //   this.form.enable();
+      //   this.router.navigate(['/main']);
+      // });
     }
     else {
       this.form.enable();
