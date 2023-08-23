@@ -18,7 +18,8 @@ import { Router } from '@angular/router';
 })
 export class MainComponent {
   private authService = inject(AuthService);
-  private router = inject(Router)
+  private router = inject(Router);
+  
   protected logout(): void {
     this.authService.logout().pipe(take(1)).subscribe(() => {
       this.router.navigate(['/'])
