@@ -4,5 +4,5 @@ import {credentialsState, featureKey} from "../auth/store";
 export interface AppState {}
 
 export const reducers: ActionReducerMap<AppState> = {
-  'Auth': credentialsState
+  'Auth': credentialsState,
 }

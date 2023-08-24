@@ -7,3 +7,8 @@ export const selectCredentialState = createFeatureSelector<fromCredentials.Crede
 export const selectToken = createSelector(
   selectCredentialState, state => state.token
 );
+
+export const selectUserName = createSelector(
+  selectCredentialState,
+  state => state.user?.firstName
+)

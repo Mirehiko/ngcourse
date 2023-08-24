@@ -17,6 +17,7 @@ import {StoreModule} from "@ngrx/store";
 import {reducers} from "./utils";
 import {EffectsModule} from "@ngrx/effects";
 import {CredentialEffects} from "./auth/store";
+import {UsersEffects} from "./main/module/store";
 
 @NgModule({
   declarations: [ AppComponent, DataComponent],

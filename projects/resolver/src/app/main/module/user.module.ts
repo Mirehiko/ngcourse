@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { UserComponent } from "projects/resolver/src/app/main/module/user.component";
 import { UserDetailsComponent } from 'projects/resolver/src/app/main/module/components';
 import { AdminGuard } from "projects/resolver/src/app/main/module/guards/admin.guard";
+import {StoreModule} from "@ngrx/store";
+import {EffectsModule} from "@ngrx/effects";
+import {featureKey, userListState, UsersEffects} from "./store";
 
 
 @NgModule({
@@ -15,6 +18,8 @@ import { AdminGuard } from "projects/resolver/src/app/main/module/guards/admin.g
   imports: [
     CommonModule,
     FormsModule,
+    StoreModule.forFeature(featureKey, userListState),
+    EffectsModule.forFeature([UsersEffects]),
     RouterModule.forChild([
       {
         path: '', component: UserComponent,
