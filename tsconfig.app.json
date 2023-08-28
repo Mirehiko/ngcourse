@@ -7,11 +7,9 @@
   },
   "files": [
     "src/main.ts",
-    "src/polyfills.ts",
-    "projects/resolver"
+    "src/polyfills.ts"
   ],
   "include": [
-    "src/**/*.d.ts",
-    "projects/resolver/**/*.d.ts"
+    "src/**/*.d.ts"
   ]
 }
