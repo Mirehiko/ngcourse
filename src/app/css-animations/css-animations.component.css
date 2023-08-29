@@ -1,0 +1,33 @@
+.animated {
+  background: lightgray;
+
+  animation-name: grow;
+  animation-duration: 3s;
+  animation-delay: 200ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+}
+
+.animated--paused {
+  animation-play-state: paused;
+}
+
+@keyframes grow {
+  from {
+    margin-left: 40%;
+    width: 20%;
+  }
+
+  /* Uncomment this and see page */
+  /*50% {
+    margin-left: 0;
+    width: 80%;
+  }*/
+
+  to {
+    margin-left: 0;
+    width: 100%;
+  }
+}

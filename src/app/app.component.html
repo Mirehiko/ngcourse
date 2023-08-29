@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>CSS Transitions example</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <ul class="nav nav-tabs mb-5">
+        <li class="nav-item">
+          <a [routerLink]="'css-transitions'"
+             class="nav-link" [routerLinkActive]="'active'">
+            CSS Transitions
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="'transition-functions'"
+             class="nav-link" [routerLinkActive]="'active'">
+            CSS Transition functions
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="'css-animations'"
+             class="nav-link" [routerLinkActive]="'active'">
+            CSS Animations
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="'angular-animations'"
+             class="nav-link" [routerLinkActive]="'active'">
+            Angular Animations
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>

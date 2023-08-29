@@ -1,0 +1,14 @@
+.css-transition-example {
+  /* Changes of this property will be with transition */
+  transition-property: font-size;
+  /* Duration of the transition */
+  transition-duration: 2s;
+  /* How to property will change */
+  transition-timing-function: linear;
+  /* Delay of the effect */
+  transition-delay: 500ms;
+
+  /* Shorthand of these properties:
+  transition: font-size 2s linear 500ms;
+   */
+}

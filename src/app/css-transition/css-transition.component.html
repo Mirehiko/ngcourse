@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col d-flex align-items-center justify-content-center">
+
+      <!-- this span size will be changed, hover-span class sets transition rules -->
+      <div style="font-size: 16px" class="css-transition-example" #text>
+        Click to button!
+      </div>
+
+    </div>
+    <div class="col">
+
+      <button class="btn btn-primary btn-lg btn-block" (click)="text.style.fontSize = '16px'">
+        Set "font-size: 16px;"
+      </button>
+      <button class="btn btn-primary btn-lg btn-block" (click)="text.style.fontSize = '32px'">
+        Set "font-size: 32px;"
+      </button>
+
+    </div>
+  </div>
+</div>
+

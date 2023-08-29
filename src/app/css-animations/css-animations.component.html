@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <p class="animated text-center"
+         [ngClass]="{'animated--paused': paused}">
+        Lorem ipsum dolor sit amet
+      </p>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col">
+      <button class="btn btn-primary" (click)="paused = !paused">Pause / Resume</button>
+    </div>
+  </div>
+</div>
